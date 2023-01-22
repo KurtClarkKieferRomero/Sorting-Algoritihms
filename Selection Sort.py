@@ -9,4 +9,8 @@ def sort(nums):
         nums[i] = nums[minpos]
         nums[minpos] = temp
 
+        print(nums)
+
 nums = [70, 1, 32, 61, 11, 8, 3, 53, 69, 14]
+sort(nums)
+print(nums)
