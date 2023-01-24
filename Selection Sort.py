@@ -1,4 +1,4 @@
-def sort(nums):
+def selection_sort(nums):
     for i in range(9):
         minpos = i
         for j in range(i, 10):
@@ -12,5 +12,5 @@ def sort(nums):
         print(nums)
 
 nums = [70, 1, 32, 61, 11, 8, 3, 53, 69, 14]
-sort(nums)
+selection_sort(nums)
 print(nums)
