@@ -1,6 +1,9 @@
 #create a swapping technique for the start and end
-def swap():
-    temp = 1
+def swap(a, b, arr):
+    if a != b: #if the arr has the same element, don't switch
+        temp = arr[a]
+        arr[a] = arr[b]
+        arr[b] = temp
 
 
 
