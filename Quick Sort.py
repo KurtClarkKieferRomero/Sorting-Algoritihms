@@ -17,7 +17,7 @@ def partition(nums):
 
     while start < end:  # If the start and end cross each other, this will stop
         # Create a way to move the start and end index
-        while nums[start] <= pivot:
+        while nums[start] < len(nums) and nums[start] <= pivot:
             start = start + 1  # This will move the start forward until it finds number less than pivot
 
         while nums[end] > pivot:
@@ -34,7 +34,6 @@ def quick_sort(nums):
     partition(nums)
 
 
-if __name__ == '__main__':
-    nums = [70, 1, 32, 61, 11, 8, 3, 53, 69, 14]
-    quick_sort(nums)
-    print(nums)
+nums = [70, 1, 32, 61, 11, 8, 3, 53, 69, 14]
+quick_sort(nums)
+print(nums)
