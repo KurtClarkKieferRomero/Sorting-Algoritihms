@@ -1,39 +1,36 @@
-# create a swapping technique for the start and end
 def swap(a, b, arr):
-    if a != b:  # if the arr has the same element, don't switch
+    if a != b:
         temp = arr[a]
         arr[a] = arr[b]
         arr[b] = temp
 
-
-# create a partition function to make the pivot in the middle
-def partition(nums):
-    pivot_index = 0  # Pivot is the start value
+def partition(nums, start, end):
+    pivot_index = start
     pivot = nums[pivot_index]
 
-    # Create a start and end locator
-    start = pivot_index + 1
-    end = len(nums) - 1
-
-    while start < end:  # If the start and end cross each other, this will stop
-        # Create a way to move the start and end index
-        while nums[start] < len(nums) and nums[start] <= pivot:
-            start = start + 1  # This will move the start forward until it finds number less than pivot
+    while start < end:
+        while start < len(nums) and nums[start] <= pivot:
+            start = start + 1
 
         while nums[end] > pivot:
-            end = end - 1  # This will move the end backward until it finds number greater than pivot
+            end = end - 1
 
-        if start < end:  # This will make it safe
+        if start < end:
             swap(start, end, nums)
 
-    swap(pivot_index, end, nums)  # This will make it so that the pivot is in the sorted order
+    swap(pivot_index, end, nums)
+    return end
 
 
 # create a quick sort function
-def quick_sort(nums):
-    partition(nums)
+def quick_sort(nums, start, end):
+    if start < end:
+        part_ind = partition(nums, start, end)  # Will store partition index
+        quick_sort(nums, start, part_ind - 1)   # Will sort left partition
+        quick_sort(nums, part_ind + 1, end)     # Will sort right partition
+
 
 
 nums = [70, 1, 32, 61, 11, 8, 3, 53, 69, 14]
-quick_sort(nums)
+quick_sort(nums, 0, len(nums) - 1)
 print(nums)
