@@ -31,7 +31,6 @@ def quick_sort(nums, start, end):
         quick_sort(nums, part_ind + 1, end)     # Will sort right partition
 
 
-
 nums = [70, 1, 32, 61, 11, 8, 3, 53, 69, 14]
 print(nums)
 quick_sort(nums, 0, len(nums) - 1)
