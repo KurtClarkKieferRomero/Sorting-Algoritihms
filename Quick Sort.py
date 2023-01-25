@@ -6,12 +6,20 @@ def swap():
 
 #create a partition function to make the pivot in the middle
 def partition(nums):
-    pivot_index = 0
+    pivot_index = 0 #Pivot is the start value
     pivot = nums[pivot_index]
 
     #Create a start and end locator
     start = pivot_index + 1
     end = len(nums) - 1
+
+    #Create a way to move the start and end index
+    while nums[start] <= pivot:
+        start = start + 1 #This will move the start forward until it finds number less than pivot
+
+    while nums[end] > pivot:
+        end = end - 1 #This will move the end backward until it finds number greater than pivot
+
 
 #create a quick sort function
 def quick_sort(nums):
