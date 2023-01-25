@@ -3,6 +3,7 @@ def swap(a, b, arr):
         temp = arr[a]
         arr[a] = arr[b]
         arr[b] = temp
+    print(nums)
 
 def partition(nums, start, end):
     pivot_index = start
@@ -32,5 +33,6 @@ def quick_sort(nums, start, end):
 
 
 nums = [70, 1, 32, 61, 11, 8, 3, 53, 69, 14]
+print(nums)
 quick_sort(nums, 0, len(nums) - 1)
 print(nums)
