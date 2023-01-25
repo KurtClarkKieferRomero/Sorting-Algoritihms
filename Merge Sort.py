@@ -1,8 +1,18 @@
-def merge_two_sorted_list(a, b):
+def merge_two_sorted_list(a, b, arr):
     len_a = len(a)
     len_b = len(b)
-    # i and j are two lists while k is the original sorted list
+    # i and j are two lists' indexes while k is the original sorted list
     i = j = k = 0
+
+    while i < len_a and j < len_b:
+        if a[i] <= b[j]:
+            arr[k] = arr[i]
+            i += 1
+        else:
+            arr[k] = arr[j]
+            j += 1
+        k += 1
+
 
 
 
