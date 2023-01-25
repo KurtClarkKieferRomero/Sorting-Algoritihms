@@ -13,6 +13,14 @@ def merge_two_sorted_list(a, b, arr):
             j += 1
         k += 1
 
+    while i < len_a:
+        arr[k] = arr[a]
+        i += 1
+        k += 1
+    while j < len_b:
+        arr[k] = arr[j]
+        j += 1
+        k += 1
 
 
 
